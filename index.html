@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="homeMobile.css">
+    <script src="script.js" defer></script>
+    <script src="array.js"></script>
+</head>
+<body onload="renderCards()">
+    <header>
+        <img onclick="showMenu()" id="menu" class="menu" src="/img/nav-icon.png">
+        <span class="heading" id="heading">UNIHELP</span>
+        <input type="text" id="search" class="d-none" placeholder="Buscar...">
+        <img onclick="openSearch()" src="/img/lupe.png">
+        
+        <nav id="navbar" class="nav">
+            <a href="#">Home</a>
+            <a href="#">Perfil</a>
+            <a href="#">Chat</a>
+            <a href="#">Configuración</a>
+            <a href="#">Ayuda</a>
+        </nav>
+    </header>
+
+    <div class="home-container" id="home-container"></div>
+    
+</body>
+</html>

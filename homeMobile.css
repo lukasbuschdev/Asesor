@@ -1,0 +1,82 @@
+/* <-- SCREEN 1000px --> */
+
+@media(max-width: 1000px) {
+    
+}
+
+
+
+/* <-- SCREEN 750px --> */
+
+@media(max-width: 750px) {
+    header:has(img:first-of-type:hover) nav,
+    .nav:hover {
+        transform: unset;
+    }
+}
+
+
+
+/* <-- SCREEN 550px --> */
+
+@media(max-width: 550px) {
+    header span {
+        font-size: 1.4em;
+    }
+
+    .search {
+        width: 60%;
+    }
+}
+
+
+
+/* <-- SCREEN 450px --> */
+
+@media(max-width: 450px) {
+    header span {
+        font-size: 1.3em;
+    }
+
+    header img:first-of-type {
+        height: 35px;
+    }
+
+    .nav {
+        width: 100%;
+        align-items: center;
+        padding: 30px 0;
+    }
+}
+
+
+
+
+/* <-- SCREEN 350px --> */
+
+@media(max-width: 350px) {
+    header {
+        padding: 15px 5px;
+    }
+
+    .heading {
+        font-size: 1.2em;
+    }
+
+    header img:first-of-type {
+        height: 35px;
+        margin-right: 5px;
+    }
+
+    header img:last-of-type {
+        height: 35px;
+    }
+}
+
+
+
+/* <-- SCREEN 280px --> */
+
+@media(max-width: 280px) {
+    
+}
