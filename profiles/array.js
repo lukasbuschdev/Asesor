@@ -93,3 +93,5 @@ let cards = [
 ];
 
 let authors = ['Mateo', 'Santiago', 'Valentina', 'Maria Fernanda', 'Diego', 'Alejandro', 'Miguel Angel', 'Mia', 'Gisela', 'Daniel'];
+
+let messages = [];

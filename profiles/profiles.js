@@ -207,7 +207,6 @@ function openChat(i) {
     let chat = document.querySelector('#chatContainer');
     chat.innerHTML += renderChat(i);
 
-    document.getElementById('profile').classList.toggle('opacity');
     document.getElementById('chatContainer').classList.replace('chat-closed', 'chat-container');
     document.getElementById('single-profile'+ i).classList.toggle('dark-opacity');
     
@@ -220,9 +219,9 @@ function renderChat(i, k) {
                 <img src="/img/back.png" onclick="closeChat(${i})">
                 <p>Chat with ${cards[i].name}</p>
             </div>
-            <div id="newMessage${i}">
-                <p>${messages[k]}</p>
-            </div>
+
+            <div class="new-message-container" id="newMessage${i}"></div>
+
             <div class="chat-input-container">
                 <div class="input-bg">
                     <div class="chat-input" id="chat-input${i}" contenteditable="true" aria-multiline="true"></div>
@@ -236,7 +235,6 @@ function renderChat(i, k) {
 function closeChat(i) {
     document.getElementById('chatContainer').innerHTML = '';
 
-    document.getElementById('profile').classList.toggle('opacity');
     document.getElementById('chatContainer').classList.replace('chat-container', 'chat-closed');
     document.getElementById('single-profile'+ i).classList.toggle('dark-opacity');
 }
@@ -248,7 +246,7 @@ function sendMessage(i) {
     if(!newMessage == 0) {
 
     messages.push(newMessage);
-    renderMessages(i);
+    document.getElementById('newMessage' + i).innerHTML = renderMessages(i);
 
     inputMessage.textContent = "";
 
@@ -259,13 +257,20 @@ function sendMessage(i) {
 
 function renderMessages(i) {
     let newMessages = document.getElementById('newMessage' + i);
-    newMessages.innerHTML = '';
+    // newMessages.innerHTML = '';
 
     for (let k = 0; k < messages.length; k++) {
-        newMessages.innerHTML += messages[k];
+        newMessages += renderMessagesToChat(i, k);
     }
 
     return messages;
 }
 
-let messages = [];
+function renderMessagesToChat(i, k) {
+    return `
+        <div id="message${i}" class="message">
+            <span>${messages[k]}</span>
+        </div>
+    `;
+
+}
