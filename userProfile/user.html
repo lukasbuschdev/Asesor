@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
 
-    <link rel="stylesheet" href="profiles.css">
-    <link rel="stylesheet" href="profilesMobile.css">
-    <script src="profiles.js" defer></script>
-    <script src="array.js" defer></script>
+    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="userMobile.css">
+    <script src="user.js" defer></script>
+    <script src="array.js"></script>
 </head>
-<body onload="renderCards()">
+<body onload="renderUserProfile()">
     <header>
         <img onclick="showMenu()" id="menu" class="menu" src="/img/nav-icon.png">
         <span class="heading" id="heading">UNIHELP</span>
-        <input type="text" id="search" class="d-none" placeholder="Buscar..." oninput="search()">
+        <input type="text" id="search" class="d-none" placeholder="Buscar...">
         <img onclick="openSearch()" src="/img/lupe.png">
         
         <nav id="navbar" class="nav">
@@ -27,11 +27,7 @@
         </nav>
     </header>
 
-    <div class="container" id="container"></div>
-    
-    <div id="profile" class="d-none"></div>
-
-    <div id="chatContainer" class="chat-closed"></div>
+    <div class="user-container" id="user-container"></div>
     
 </body>
 </html>
