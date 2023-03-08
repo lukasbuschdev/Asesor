@@ -19,6 +19,7 @@ body {
 /* <-- HEADER SECTION --> */
 
 header {
+    z-index: 999;
     height: 65px;
     width: 100%;
     background-color: #F7ebae;
@@ -29,6 +30,7 @@ header {
     box-sizing: border-box;
     position: fixed;
     box-shadow: 0 2px 10px 0 rgb(43, 43, 43, 0.2);
+    top: 0;
 }
 
 .menu {
@@ -157,9 +159,10 @@ header:has(img:first-of-type:hover) nav,
     align-items: center;
     background-color: #F7ebae;
     border: 1px solid rgb(243, 243, 243);
-    margin: 15px 10%;
+    margin: 0 10%;
     border-radius: 10px;
     box-shadow: 0 2px 2px 0 rgb(43, 43, 43, 0.2);
+    z-index: 2;
 }
 
 .home-card:hover {
@@ -171,12 +174,16 @@ header:has(img:first-of-type:hover) nav,
     background-color: rgb(240, 240, 240);    
 }
 
-.home-card img {
+.home-image {
     height: 100px;
     width: 100%;
     object-fit: cover;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+
+.border-radius {
+    border-radius: 0 !important;
 }
 
 .home-card-text {
@@ -190,19 +197,26 @@ header:has(img:first-of-type:hover) nav,
 
 /* <-- LOWER CARDS SECTION --> */
 
+.subjects-center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
 .subjects {
     width: 100%;
     height: 70px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: red;
     margin-top: 15px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     transform: translateY(-83px);
     transition: transform 500ms ease-in-out;
     margin: 0 10%;
+    z-index: -1;
+    translate: -83px 0;
 }
 
 .subjects-clicked {
@@ -211,12 +225,14 @@ header:has(img:first-of-type:hover) nav,
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: red;
+    background-color: #F7ebae;
     margin-top: 15px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    transform: translateY(-13px);
-    margin: 0 10%;
+    margin: 0 -22px 0 144px;
+    z-index: 0;
+    transform: translateY(-13px) !important;
+    padding: 23px 0 0 15px;
 }
 
 .subject {
@@ -225,10 +241,12 @@ header:has(img:first-of-type:hover) nav,
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    font-size: 0.9em;
 }
 
 .subject p {
     color: #2b2b2b;
     font-weight: 500;
+    font-size: 0.9em;
 }
 

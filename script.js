@@ -20,12 +20,14 @@ function homeCardsTemplate(i, homeCardItem) {
                 <p>${homeCardItem.title}</p>
             </div>
 
-            <img src="${homeCardItem.image}">
+            <img class="home-image" src="${homeCardItem.image}">
 
         </div>
 
-        <div class="subjects" id="subjects${i}">
-            ${subjectHtml}
+        <div class="subjects-center">
+            <div class="subjects" id="subjects${i}">
+                ${subjectHtml}
+            </div>
         </div>
     `;
 }
@@ -56,9 +58,16 @@ function showMenu() {
 }
 
 function openSubjects(i) {
-    let subjects = document.getElementById('subjects'+ i);
-    subjects.addEventListener('click', function() {
-        console.log('aaaaaa');
-        subjects.classList.toggle('subjects-clicked');
-    });
+    document.getElementById('subjects'+ i).classList.toggle('subjects-clicked');
+    document.querySelector('.home-image').classList.toggle('border-radius');
 }
+
+// function openSubjects(i) {
+//     let subjects = document.getElementById('subjects'+ i);
+//     let homeCard = document.getElementById('home-card'+ i);
+
+//     homeCard.addEventListener('click', function() {
+//         console.log('aaaaaa');
+//         subjects.classList.toggle('subjects-clicked');
+//     });
+// }
