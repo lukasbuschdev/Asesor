@@ -3,19 +3,37 @@ function renderCards() {
     container.innerHTML = '';
 
     for(let i = 0; i < homeCards.length; i++) {
-
-        container.innerHTML += homeCardsTemplate(i);
+        let homeCardItem = homeCards[i];
+        container.innerHTML += homeCardsTemplate(i, homeCardItem);
     }
 }
 
-function homeCardsTemplate(i) {
+function homeCardsTemplate(i, homeCardItem) {
+    let subjectHtml = '';
+    for(let j = 0; j < homeCardItem.subjects.length; j++) {
+        let subject = homeCardItem.subjects[j];
+        subjectHtml += renderSubject(subject);
+    }
     return `
-        <div class="home-card" id="home-card${i}">
+        <div class="home-card" id="home-card${i}" onclick="openSubjects(${i})">
             <div class="home-card-text">
-                <p>${homeCards[i].title}</p>
+                <p>${homeCardItem.title}</p>
             </div>
 
-            <img src="${homeCards[i].image}">
+            <img src="${homeCardItem.image}">
+
+        </div>
+
+        <div class="subjects" id="subjects${i}">
+            ${subjectHtml}
+        </div>
+    `;
+}
+
+function renderSubject(subject) {
+    return `
+        <div class="subject">
+            <p>${subject}</p>
         </div>
     `;
 }
@@ -35,4 +53,12 @@ function openSearch() {
 function showMenu() {
     document.getElementById('navbar').classList.toggle('d-none');
     document.getElementById('navbar').classList.toggle('nav');
+}
+
+function openSubjects(i) {
+    let subjects = document.getElementById('subjects'+ i);
+    subjects.addEventListener('click', function() {
+        console.log('aaaaaa');
+        subjects.classList.toggle('subjects-clicked');
+    });
 }

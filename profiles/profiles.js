@@ -209,7 +209,10 @@ function openChat(i) {
 
     document.getElementById('chatContainer').classList.replace('chat-closed', 'chat-container');
     document.getElementById('single-profile'+ i).classList.toggle('dark-opacity');
-    
+    document.querySelector('.profile-img').classList.add('image-opacity');  
+    document.querySelector('.contact-button').classList.add('image-opacity');
+    document.querySelector('.rank-img').classList.add('image-opacity');
+
 }
 
 function renderChat(i, k) {
@@ -237,6 +240,9 @@ function closeChat(i) {
 
     document.getElementById('chatContainer').classList.replace('chat-container', 'chat-closed');
     document.getElementById('single-profile'+ i).classList.toggle('dark-opacity');
+    document.querySelector('.profile-img').classList.remove('image-opacity');  
+    document.querySelector('.contact-button').classList.remove('image-opacity');
+    document.querySelector('.rank-img').classList.remove('image-opacity');
 }
 
 function sendMessage(i) {
