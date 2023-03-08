@@ -61,13 +61,3 @@ function openSubjects(i) {
     document.getElementById('subjects'+ i).classList.toggle('subjects-clicked');
     document.querySelector('.home-image').classList.toggle('border-radius');
 }
-
-// function openSubjects(i) {
-//     let subjects = document.getElementById('subjects'+ i);
-//     let homeCard = document.getElementById('home-card'+ i);
-
-//     homeCard.addEventListener('click', function() {
-//         console.log('aaaaaa');
-//         subjects.classList.toggle('subjects-clicked');
-//     });
-// }

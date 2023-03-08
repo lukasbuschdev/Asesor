@@ -151,6 +151,7 @@ function singleProfileComments(i) {
     let comments = "";
     for (let j = 0; j < cards[i].comments.length; j++) {
         comments += renderComments(i, j);
+
     }
 
     return comments;
@@ -278,5 +279,4 @@ function renderMessagesToChat(i, k) {
             <span>${messages[k]}</span>
         </div>
     `;
-
 }
