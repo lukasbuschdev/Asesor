@@ -137,10 +137,10 @@ function singleProfileInformation(i) {
     `;
 }
 
-function singleProfileChatButton(i) {
+function singleProfileChatButton(i, k) {
     return `
         <div class="contact-button-container">
-            <button class="contact-button" onclick="openChat(${i})">
+            <button class="contact-button" onclick="openChat(${i}, ${k})">
                 Chat
             </button>
         </div>
@@ -197,6 +197,8 @@ function sendComment(i) {
 
     document.getElementById('profile').innerHTML = renderSingleProfile(i);
 
+    window.scrollTo({ top: document.documentElement.scrollHeight - window.innerHeight});
+
     input.textContent = "";
 
     } else {
@@ -204,9 +206,9 @@ function sendComment(i) {
     }
 }
 
-function openChat(i) {
+function openChat(i, k) {
     let chat = document.querySelector('#chatContainer');
-    chat.innerHTML += renderChat(i);
+    chat.innerHTML += renderChat(i, k);
 
     document.getElementById('chatContainer').classList.replace('chat-closed', 'chat-container');
     document.getElementById('single-profile'+ i).classList.toggle('dark-opacity');
@@ -224,8 +226,9 @@ function renderChat(i, k) {
                 <p>Chat with ${cards[i].name}</p>
             </div>
 
-            <div class="new-message-container" id="newMessage${i}"></div>
-
+            <div class="new-message-container" id="newMessage${i}">
+                <p >${messages[k] ?? ""}</p>
+            </div>
             <div class="chat-input-container">
                 <div class="input-bg">
                     <div class="chat-input" id="chat-input${i}" contenteditable="true" aria-multiline="true" data-text="Escribe un mensaje..."></div>
@@ -244,6 +247,7 @@ function closeChat(i) {
     document.querySelector('.profile-img').classList.remove('image-opacity');  
     document.querySelector('.contact-button').classList.remove('image-opacity');
     document.querySelector('.rank-img').classList.remove('image-opacity');
+    messages = [];
 }
 
 function sendMessage(i) {
@@ -263,20 +267,27 @@ function sendMessage(i) {
 }
 
 function renderMessages(i) {
-    let newMessages = document.getElementById('newMessage' + i);
-    // newMessages.innerHTML = '';
+    let newMessages = '';
 
     for (let k = 0; k < messages.length; k++) {
         newMessages += renderMessagesToChat(i, k);
     }
 
-    return messages;
+    return newMessages;
 }
 
 function renderMessagesToChat(i, k) {
+    if(messages.length > 0) {
+    
+    let date = new Date();
+
     return `
         <div id="message${i}" class="message">
             <span>${messages[k]}</span>
+            <div class="time">
+                ${date.getHours()}:${date.getMinutes()}
+            </div>
         </div>
     `;
+    }
 }
