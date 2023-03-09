@@ -195,7 +195,7 @@ function sendComment(i) {
 
     cards[i].comments.push(newComment);
 
-    document.getElementById('single-profile' + i).innerHTML = renderSingleProfile(i);
+    document.getElementById('profile').innerHTML = renderSingleProfile(i);
 
     input.textContent = "";
 
