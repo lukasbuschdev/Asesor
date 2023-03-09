@@ -35,7 +35,7 @@ function homeCardsTemplate(i, homeCardItem) {
 function renderSubject(subject) {
     return `
         <div class="subject">
-            <li>${subject}</li>
+            <li><a href="/profiles/profiles.html">${subject}</a></li>
         </div>
     `;
 }

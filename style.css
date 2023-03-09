@@ -203,13 +203,14 @@ header:has(img:first-of-type:hover) nav,
     width: 100%;
     height: fit-content;
     margin: 0 10%;
-    transform: translate(0, -100%);
+    transform-origin: top;
+    transform: scaleY(0);
     transition: transform 500ms ease-in-out;
     z-index: -1;
 }
 
 .subjects-center-clicked {
-    transform: translate(0, 2px);
+    transform: scaleY(1);
     z-index: 0;
 }
 
@@ -245,13 +246,13 @@ header:has(img:first-of-type:hover) nav,
     justify-content: flex-start;
     align-items: center;
     font-size: 0.9em;
-    padding-right: 5px;
+    padding: 5px 5px;
 }
 
-.subject li {
+.subject li a {
     color: #2b2b2b;
     font-weight: 500;
     font-size: 0.9em;
     margin: 5px 0;
+    text-decoration: none;
 }
-

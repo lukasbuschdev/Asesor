@@ -121,7 +121,7 @@ function singleProfileInformation(i) {
 
             <div class="text">
                 <p>Promedio</p>
-                <p>9.9</p>
+                <p>${cards[i].promedio}</p>
             </div>
 
             <div class="text">
@@ -174,7 +174,7 @@ function renderComments(i, j) {
 function renderInputField(i, j) {
     return `
         <div class="input-comment">
-            <div id="input-comment${i}" contenteditable="true" aria-multiline="true"></div>
+            <div id="input-comment${i}" contenteditable="true" aria-multiline="true" data-text="Escribe tu comentario..."></div>
             <button class="send-comment" onclick="sendComment(${i},${j})"></button>
         </div>
     `;
@@ -228,7 +228,7 @@ function renderChat(i, k) {
 
             <div class="chat-input-container">
                 <div class="input-bg">
-                    <div class="chat-input" id="chat-input${i}" contenteditable="true" aria-multiline="true"></div>
+                    <div class="chat-input" id="chat-input${i}" contenteditable="true" aria-multiline="true" data-text="Escribe un mensaje..."></div>
                     <button class="send-message" onclick="sendMessage(${i}, ${k})"></button>
                 </div>        
             </div>

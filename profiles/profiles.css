@@ -197,6 +197,7 @@ header:has(img:first-of-type:hover) nav,
 .upper-text {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0 10px;
     font-weight: 600;
     background-color: rgb(255, 255, 255, 0.2);
@@ -205,6 +206,9 @@ header:has(img:first-of-type:hover) nav,
 
 .upper-text p {
     margin: 10px 0;
+    max-width: 100px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .lower-text p {
@@ -214,6 +218,7 @@ header:has(img:first-of-type:hover) nav,
 .lower-text {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0 10px;
     font-weight: 500;
     background-color: rgb(255, 255, 255, 0.2);
@@ -332,10 +337,15 @@ header:has(img:first-of-type:hover) nav,
 .text {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 1.1em;
     font-weight: 600;
     letter-spacing: 0.02em;
     color: #2b2b2b;
+}
+
+.text p {
+    width: min-content;
 }
 
 .contact-button-container {
@@ -449,6 +459,11 @@ header:has(img:first-of-type:hover) nav,
 
 .input-comment div::-webkit-scrollbar {
     display: none;
+}
+
+.input-comment div:empty:not(:focus):before {
+	content: attr(data-text);
+    color: #999999;
 }
 
 .send-comment {
@@ -590,6 +605,11 @@ header:has(img:first-of-type:hover) nav,
 
 .chat-input::-webkit-scrollbar {
     display: none;
+}
+
+.chat-input:empty:not(:focus):before {
+	content: attr(data-text);
+    color: #999999;
 }
 
 .send-message {

@@ -119,6 +119,14 @@
     .profile-img {
         width: 100%;
     }
+
+    .chat-heading p {
+        padding-left: 15px;
+    }
+
+    .chat-heading img {
+        height: 25px;
+    }
 }
 
 
@@ -126,5 +134,7 @@
 /* <-- SCREEN 280px --> */
 
 @media(max-width: 280px) {
-    
+    .chat-heading img {
+        left: 8px;
+    }
 }
