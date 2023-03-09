@@ -24,7 +24,7 @@ function homeCardsTemplate(i, homeCardItem) {
 
         </div>
 
-        <div class="subjects-center">
+        <div class="subjects-center" id="subjects-center${i}">
             <div class="subjects" id="subjects${i}">
                 ${subjectHtml}
             </div>
@@ -35,7 +35,7 @@ function homeCardsTemplate(i, homeCardItem) {
 function renderSubject(subject) {
     return `
         <div class="subject">
-            <p>${subject}</p>
+            <li>${subject}</li>
         </div>
     `;
 }
@@ -60,4 +60,5 @@ function showMenu() {
 function openSubjects(i) {
     document.getElementById('subjects'+ i).classList.toggle('subjects-clicked');
     document.querySelector('.home-image').classList.toggle('border-radius');
+    document.getElementById('subjects-center'+ i).classList.toggle('subjects-center-clicked');
 }
