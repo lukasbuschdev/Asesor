@@ -99,6 +99,6 @@ let cards = [
     }
 ];
 
-let authors = ['Mateo', 'Santiago', 'Valentina', 'Maria Fernanda', 'Diego', 'Alejandro', 'Miguel Angel', 'Mia', 'Gisela', 'Daniel'];
+let authors = ['Mateo', 'Santiago', 'Valentina', 'Maria Fernanda', 'Diego', 'Alejandro', 'Miguel Angel', 'Mia', 'Gisela', 'Alejandro (Tú)', 'Alejandro (Tú)', 'Alejandro (Tú)', 'Alejandro (Tú)', 'Alejandro (Tú)', 'Alejandro (Tú)'];
 
 let messages = [];
