@@ -56,7 +56,7 @@ function search() {
         let name = cards[i].name;
         let subject = cards[i].subject;
 
-        if (name.toLowerCase().includes(search.toLowerCase()) || subject.toLowerCase().includes(search.toLowerCase())) {
+        if (name.toLowerCase().includes(search.toLowerCase()) || subject.toLowerCase().includes(search.toLowerCase()) ) {
             container.innerHTML += cardsTemplate(i);
         }
     }
