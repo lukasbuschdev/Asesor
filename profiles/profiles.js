@@ -19,7 +19,7 @@ function cardsTemplate(i) {
                 <div class="lower-text">
                     <p>Semester (${cards[i].semester})</p>
                     <div>
-                        <img src="/img/star.png">
+                        <img src="../img/star.png">
                         <p><b>${cards[i].rating}</b></p>
                     </div>
                 </div>
@@ -93,7 +93,7 @@ function singleProfileImage(i) {
     return `
         <div class="image">
             <div class="close-tag">   
-                <img class="close" src="/img/close.png" onclick="closeProfile()">
+                <img class="close" src="../img/close.png" onclick="closeProfile()">
             </div>
 
             <img class="rank-img" src="${cards[i].rank}">
@@ -215,15 +215,18 @@ function openChat(i, k) {
     document.querySelector('.profile-img').classList.add('image-opacity');  
     document.querySelector('.contact-button').classList.add('image-opacity');
     document.querySelector('.rank-img').classList.add('image-opacity');
-
 }
 
 function renderChat(i, k) {
     return `
         <div class="chat" id="chat">
             <div class="chat-heading">
-                <img src="/img/back.png" onclick="closeChat(${i})">
+                <img src="../img/back.png" onclick="closeChat(${i})">
                 <p>Chat with ${cards[i].name}</p>
+            </div>
+
+            <div class="day">
+                <p>Hoy</p>
             </div>
 
             <div class="new-message-container" id="newMessage${i}">
@@ -248,23 +251,31 @@ function closeChat(i) {
     document.querySelector('.contact-button').classList.remove('image-opacity');
     document.querySelector('.rank-img').classList.remove('image-opacity');
     messages = [];
+    window.scrollTo({ top: 0});
 }
 
 function sendMessage(i) {
     let inputMessage = document.getElementById('chat-input' + i);
     let newMessage = inputMessage.textContent;
+    let chat = document.querySelector('#chat');
 
     if(!newMessage == 0) {
 
     messages.push(newMessage);
     document.getElementById('newMessage' + i).innerHTML = renderMessages(i);
-
+ 
     inputMessage.textContent = "";
+
+    scrollToChat(chat);
 
     } else {
         console.log('no input found')
     }
 }
+
+function scrollToChat(chat) {
+    chat.scrollTo({ top: chat.scrollHeight - chat.clientHeight});
+  }
 
 function renderMessages(i) {
     let newMessages = '';
@@ -284,7 +295,7 @@ function renderMessagesToChat(i, k) {
     return `
         <div id="message${i}" class="message">
             <span>${messages[k]}</span>
-            <div class="time">
+            <div class="time" id="time${i}">
                 ${date.getHours()}:${date.getMinutes()}
             </div>
         </div>

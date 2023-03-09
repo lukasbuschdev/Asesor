@@ -91,6 +91,15 @@
     .input-comment div {
         width: 80%;
     }
+
+    .chat-heading p {
+        font-size: 1.1em;
+    }
+
+    .chat-heading img {
+        height: 25px;
+        width: 25px;
+    }
 }
 
 
@@ -122,10 +131,12 @@
 
     .chat-heading p {
         padding-left: 15px;
+        font-size: 1em;
     }
 
     .chat-heading img {
-        height: 25px;
+        height: 23px;
+        width: 23px;
     }
 }
 

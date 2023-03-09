@@ -467,7 +467,7 @@ header:has(img:first-of-type:hover) nav,
 }
 
 .send-comment {
-    background-image: url(/img/send.png);
+    background-image: url(../img/send.png);
     height: 35px;
     min-width: 35px;
     background-size: contain;
@@ -525,25 +525,41 @@ header:has(img:first-of-type:hover) nav,
     box-shadow: 0 2px 2px 0 rgb(43, 43, 43, 0.2);
     margin-top: 70px;
     position: relative;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
+
+.chat::-webkit-scrollbar {
+    display: none;
+}
+
 
 .chat-heading {
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid rgb(245, 245, 245);
+    position: fixed;
+    left: 7.5%;
+    width: inherit;
+    box-shadow: 0 2px 5px 0 rgb(43, 43, 43, 0.05);
+    z-index: 115;
+    background-color: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .chat-heading img {
     height: 28px;
     width: 28px;
     object-fit: contain;
-    position: absolute;
-    left: 15px;
     transform: scale(1);
     transition: transform 100ms ease-in-out;
     border-radius: 50%;
     padding: 3px;
+    left: 20px;
+    position: absolute;
 }
 
 .chat-heading img:hover {
@@ -613,7 +629,7 @@ header:has(img:first-of-type:hover) nav,
 }
 
 .send-message {
-    background-image: url(/img/send.png);
+    background-image: url(../img/send.png);
     height: 30px;
     min-width: 30px;
     background-size: contain;
@@ -634,16 +650,32 @@ header:has(img:first-of-type:hover) nav,
     transform: rotate(20deg);   
 }
 
+.day {
+    display: flex;
+    justify-content: center;
+    margin-top: 65px;
+}
+
+.day p {
+    font-size: 0.8em;
+    font-weight: 600;
+    color: #2b2b2b;
+    background-color: rgba(43, 43, 43, 0.1);
+    padding: 4px 50px;
+    border-radius: 20px;
+}
+
 .new-message-container {
     box-sizing: border-box;
     height: fit-content;
-    max-width: 50%;
+    max-width: 60%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     padding: 10px 5%;
     align-self: flex-end;
 }
+
 
 .message {
     position: relative;
@@ -665,7 +697,7 @@ header:has(img:first-of-type:hover) nav,
     border-bottom: 20px solid #F7ebae;
 
     bottom: 0;
-    right: -20px;
+    right: -13px;
 }
 
 .time {
