@@ -14,14 +14,14 @@
     <script src="profiles.js" defer></script>
     <script src="array.js" defer></script>
 </head>
-<body onload="renderCards()">
-    <header>
+<body onload="renderCards()" id="body">
+    <header id="header">
         <img onclick="showMenu()" id="menu" class="menu" src="../img/nav-icon.png">
         <span class="heading" id="heading">UNIHELP</span>
         <input type="text" id="search" class="d-none" placeholder="Buscar..." oninput="search()">
         <img onclick="openSearch()" src="../img/lupe.png">
         
-        <nav id="navbar" class="nav">
+        <nav id="navbar" class="d-none">
             <a href="../index.html">Home</a>
             <a href="../profiles/profiles.html">Asesores</a>
             <a href="#">Chat</a>

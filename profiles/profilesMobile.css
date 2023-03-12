@@ -9,14 +9,7 @@
 /* <-- SCREEN 750px --> */
 
 @media(max-width: 750px) {
-    header:has(img:first-of-type:hover) nav,
-    .nav:hover {
-        transform: unset;
-    }
 
-    .card:hover {
-        background-color: rgba(255, 255, 255);
-    }
 }
 
 

@@ -15,7 +15,7 @@ function homeCardsTemplate(i, homeCardItem) {
         subjectHtml += renderSubject(subject);
     }
     return `
-        <div class="home-card" id="home-card${i}" onclick="openSubjects(${i})">
+        <div class="home-card marginBottom" id="home-card${i}" onclick="openSubjects(${i})">
             <div class="home-card-text">
                 <p>${homeCardItem.title}</p>
             </div>
@@ -45,11 +45,6 @@ function openSearch() {
     document.getElementById('heading').classList.toggle('d-none');
     document.getElementById('search').classList.toggle('search');
     document.getElementById('search').classList.toggle('d-none');
-
-    if (window.matchMedia("min-width: 350px").matches) {
-        document.getElementById('menu').classList.toggle('menu');
-        document.getElementById('menu').classList.toggle('d-none');
-    }
 }
 
 function showMenu() {
@@ -61,4 +56,5 @@ function openSubjects(i) {
     document.getElementById('subjects'+ i).classList.toggle('subjects-clicked');
     document.querySelector('.home-image').classList.toggle('border-radius');
     document.getElementById('subjects-center'+ i).classList.toggle('subjects-center-clicked');
+    document.getElementById('home-card'+ i).classList.toggle('marginBottom');
 }

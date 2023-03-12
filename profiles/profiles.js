@@ -14,7 +14,7 @@ function cardsTemplate(i) {
             <div class="card-text">
                 <div class="upper-text">
                     <p>${cards[i].name}</p>
-                    <p>${cards[i].subject}</p>
+                    <p>${cards[i].career}</p>
                 </div>
                 <div class="lower-text">
                     <p>Semester (${cards[i].semester})</p>
@@ -114,6 +114,11 @@ function singleProfileInformation(i) {
                 <span>${cards[i].description}</span>
             </div>
 
+            <div class="text">
+                <p>Licenciatura</p>
+                <p>${cards[i].career}</p>
+            </div>
+            
             <div class="text">
                 <p>Asignatura</p>
                 <p>${cards[i].subject}</p>

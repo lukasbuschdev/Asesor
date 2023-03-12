@@ -13,6 +13,11 @@
     .nav:hover {
         transform: unset;
     }
+
+    .menu {
+        transform: unset;
+        transition: none;
+    }
 }
 
 
