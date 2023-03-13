@@ -37,7 +37,7 @@ function userInformation(i) {
             </div>
 
             <div class="text">
-                <p>Asignatura</p>
+                <p>Licenciatura</p>
                 <p>${userInfo[i].subject}</p>
             </div>
 
@@ -52,7 +52,7 @@ function userInformation(i) {
             </div>
 
             <div class="text">
-                <p>Accesorios tomados</p>
+                <p>Asesorías tomadas</p>
                 <p>${userInfo[i].usedAsesories}</p>
             </div>
 
